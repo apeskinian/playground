@@ -1,1 +1,1 @@
-web: gunicorn app_one.wsgi
+web: gunicorn playground.wsgi
