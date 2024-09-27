@@ -8,6 +8,8 @@ from .models import Watch
 
 @admin.register(Watch)
 class WatchAdmin(admin.ModelAdmin):
+    list_display = ('make', 'collection', 'model', 'owner')
+    list_filter = ('owner','status')
     prepopulated_fields = {'slug':('make','collection','model',)}
 
 admin.site.unregister(SocialToken)
