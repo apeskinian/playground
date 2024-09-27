@@ -12,7 +12,7 @@ class Watch(models.Model):
     slug = models.SlugField(max_length=100)
     status = models.IntegerField(choices=STATUS)
     purchased_on = models.DateField(null=True, blank=True)
-    image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField('image', default='placeholder', asset_folder='/watches/')
 
     def __str__(self):
         return f"{self.make} {self.model}"
