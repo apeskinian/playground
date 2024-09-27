@@ -1,1 +1,1 @@
-web: gunicorn playground.wsgi
+web: gunicorn project_one.wsgi
