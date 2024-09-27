@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
-{% block content %}
+{% block watches %}
     <h1>These are my Watches</h1>
     {% for watch in watches %}
-        {% if watch.status == 0 %}
+        {% if watch.status == 0 and watch.owner.username == user.username %}
         <div>
             <h3>{{ watch.make }}&nbsp{{ watch.model }}</h3>
-            {% if watch.purchased_on != null %}
                 <p>{{ watch.purchased_on }}</p>
                 <p>{{ watch.owner }}</p>
-            {% endif %}
         </div>
         {% endif %}
     {% endfor %}
+    <a class="btn btn-primary btn-lg" href="{% url 'account_logout' %}" role="button">Logout</a>
 {% endblock %}
