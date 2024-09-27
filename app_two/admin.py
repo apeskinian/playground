@@ -4,4 +4,4 @@ from .models import Watch
 
 @admin.register(Watch)
 class WatchAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug':('make','model',)}
+    prepopulated_fields = {'slug':('make','collection','model',)}

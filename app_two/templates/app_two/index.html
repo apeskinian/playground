@@ -1,14 +1,14 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
-</head>
-<body>
-    <h1>LANDING PAGE</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>These are my Watches</h1>
+    {% for watch in watches %}
+        {% if watch.status == 0 %}
+        <div>
+            <h3>{{ watch.make }}&nbsp{{ watch.model }}</h3>
+            {% if watch.purchased_on != null %}
+                <p>{{ watch.purchased_on }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

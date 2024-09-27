@@ -10,8 +10,8 @@ class Watch(models.Model):
     collection = models.CharField(max_length=100, blank=True)
     model = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
-    purchased_on = models.DateField()
     status = models.IntegerField(choices=STATUS)
+    purchased_on = models.DateField(null=True, blank=True)
     image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
